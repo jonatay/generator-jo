@@ -1,0 +1,14 @@
+{
+  "name": "generator-jo",
+  "version": "1.0.0",
+  "description": "jono's generators",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^3.1.1"
+  }
+}
