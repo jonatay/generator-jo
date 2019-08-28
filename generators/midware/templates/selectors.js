@@ -1,11 +1,15 @@
 import { createSelector } from 'reselect';
 
 export const get<%= entityName %>sRoot = state => {
-  return state.<%= subsys %>.<%= entityNameCamel %>s;
+  return state.<%= subsysNameCamel %>.<%= entityNameCamel %>s;
 };
 
 export const get<%= entityName %>List = state => {
   return get<%= entityName %>sRoot(state).list;
+};
+
+export const get<%= entityName %>Filter = state => {
+  return get<%= entityName %>sRoot(state).filter;
 };
 
 //=====================================
@@ -20,4 +24,11 @@ export const get<%= entityName %>ById = createSelector(
 export const get<%= entityName %>s = createSelector(
   get<%= entityName %>List,
   list => list.toArray()
+);
+
+
+export const getFiltered<%= entityName %>s = createSelector(
+  get<%= entityName %>s,
+  get<%= entityName %>Filter,
+  (<%= entityNameCamel %>s, filter) => <%= entityNameCamel %>s //add .filter here
 );

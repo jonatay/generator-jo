@@ -157,7 +157,8 @@ module.exports = class extends Generator {
 			{
 				entityNameCamel: camelCase(this.answers.entity),
 				entityName: capCamelCase(this.answers.entity),
-				subsys: this.answers.subsys
+				subsys: this.answers.subsys,
+				subsysNameCamel: camelCase(this.answers.subsys)
 			}
 		);
 		//index

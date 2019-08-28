@@ -2,7 +2,7 @@ import { List, Record } from 'immutable';
 import { <%= entityNameCamel %>Actions } from './<%= entity %>-actions';
 
 export const <%= entityName %>State = new Record({
-  filter: '',
+  filter: {},
   list: new List()
 });
 
@@ -11,6 +11,10 @@ export function <%= entityNameCamel %>Reducer(
   { payload, type }
 ) {
   switch (type) {
+
+    case <%= entityNameCamel %>Actions.SET_FILTER_<%= entityNameAction %>:
+      return state.set("filter", { ...state.filter, ...payload.filter });
+
     case <%= entityNameCamel %>Actions.CREATE_<%= entityNameAction %>_FULFILLED:
       return state.set(
         'list',

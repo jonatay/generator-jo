@@ -1,4 +1,7 @@
 export const <%= entityNameCamel %>Actions = {
+  
+  SET_FILTER_<%= entityNameAction %>: '<%= subsysNameAction %>SET_FILTER_<%= entityNameAction %>S',
+
   LOAD_<%= entityNameAction %>S: '<%= subsysNameAction %>_LOAD_<%= entityNameAction %>S',
   LOAD_<%= entityNameAction %>S_FULFILLED: '<%= subsysNameAction %>_LOAD_<%= entityNameAction %>S_FULFILLED',
   LOAD_<%= entityNameAction %>S_FAILED: '<%= subsysNameAction %>_LOAD_<%= entityNameAction %>S_FAILED',
@@ -17,6 +20,11 @@ export const <%= entityNameCamel %>Actions = {
   UPDATE_<%= entityNameAction %>_FAILED: '<%= subsysNameAction %>_UPDATE_<%= entityNameAction %>_FAILED',
   UPDATE_<%= entityNameAction %>_FULFILLED:
     '<%= subsysNameAction %>_UPDATE_<%= entityNameAction %>_FULFILLED',
+
+  setFilter<%= entityName %>: filter => ({
+    type: <%= entityNameCamel %>Actions.SET_FILTER_<%= entityNameAction %>,
+    payload: { filter }
+  }),
 
   load<%= entityName %>s: () => ({
     type: <%= entityNameCamel %>Actions.LOAD_<%= entityNameAction %>S

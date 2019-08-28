@@ -5,5 +5,7 @@ export { <%= entityNameCamel %>Sagas } from './<%= entity %>-sagas';
 export {
   get<%= entityName %>List,
   get<%= entityName %>s,
-  get<%= entityName %>ById
+  get<%= entityName %>ById,
+  getFiltered<%= entityName %>s,
+  get<%= entityName %>Filter
 } from './<%= entity %>-selectors';
